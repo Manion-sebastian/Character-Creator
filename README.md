@@ -4,8 +4,16 @@
 
 ### The Daily User
 Say you want to be able to make a plan for the day, either what you'll be doing, or what you need to be doing. pLan is the app for you! Create a pLan to keep track of what needs doing.
-
 If you love inspiration create a pLan with images, and text **Spark your next idea**
+
+## User Stories
+* as a user I would like to sign up for an account
+* as a user I would like to be able to log in and out of the website
+* as a user I would like to create personal pLans and keep track of them
+* as a user I would like to be able to edit my pLans and allow them to have photos if I so wish
+* as a user I would like to be able to delete my pLans if they have angered me
+* as a user I would like to see my pLans ordered neatly on the main page
+ 
 
 ---
 
@@ -13,6 +21,7 @@ If you love inspiration create a pLan with images, and text **Spark your next id
 #### A personal planner
 Create, Edit, and Schedule pLans. An intuitive and fun way of scheduling your week.
 Be the best you, you can be with **pLans** a new app from the developer that brought you Safe Space Dots Journey Home.
+
 
 ## What API will I implement?
 #### Cloudinary
