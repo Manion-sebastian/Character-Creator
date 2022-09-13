@@ -65,3 +65,29 @@ As mentioned above I will be using Cloudinary, and Bootstrap. I will also be usi
 | PUT    | /users/:id/plans | Edit pLan |
 | DELETE | /users/:id/plans/:id | Delete pLan |
 
+---
+
+## MVP and Stretch Goals
+
+#### MVP
+To have a full MVP I will have 
+* A functioning login, and authentication system
+* Clean and correct routes
+* A form for creating a new user, and pLan
+* A display of all existing pLans
+* Images for the user, and pLans
+* A well styled website
+
+#### Stretch Goals
+Stretch Goals I hope I can implement
+* Exporting pLans
+* Animations for creating and deleting pLans
+* PLan folders
+
+---
+
+## Potential Roadblocks
+Potential issues I could have
+* Formatting issues with content
+* Layout issues
+* Route issues
