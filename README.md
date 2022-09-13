@@ -18,9 +18,10 @@ Be the best you, you can be with **pLans** a new app from the developer that bro
 #### Cloudinary
 I will be relying on Cloudinary for media processing and editing.
 
-## Will I be using a Framework?
-#### Yes, Bootstrap 5
-I will be using Bootstrap for the styling of the application as it is easy to use and very flexible in usage.
+## Will I be using a CSS Framework?
+#### Yes, ~~Bootstrap 5~~ Tailwind
+ ~~I will be using Bootstrap for the styling of the application as it is easy to use and very flexible in usage.~~
+ I've used Bootstrap before many times and I want to learn something new so I will be using Tailwind
 
 ## What will be used for this Project?
 As mentioned above I will be using Cloudinary, and Bootstrap. I will also be using Vanilla Javascript, HTML, CSS, Postgres, as well as an assortment of modules. 
