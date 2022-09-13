@@ -91,3 +91,11 @@ Potential issues I could have
 * Formatting issues with content
 * Layout issues
 * Route issues
+
+---
+
+## Proof of API usage
+
+#### link: https://res.cloudinary.com/ga-sei-sm/image/upload/v1663043166/shark.png
+
+![cloudinary](https://res.cloudinary.com/ga-sei-sm/image/upload/v1663043166/shark.png)
