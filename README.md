@@ -19,5 +19,5 @@ I will be using Bootstrap for the styling of the application as it is easy to us
 ---
 
 ## ERD and Wireframes
-![imgur](https://imgur.com/a/RmRpMh3)
+![imgur, ERD](https://i.imgur.com/rdF1P5M.png)
 
