@@ -19,5 +19,34 @@ I will be using Bootstrap for the styling of the application as it is easy to us
 ---
 
 ## ERD and Wireframes
+
 ![imgur, ERD](https://i.imgur.com/rdF1P5M.png)
 
+![imgur, main screen](https://i.imgur.com/kIYWCoq.png)
+
+![imgur, content screen](https://i.imgur.com/xyA4h36.png)
+
+![imgur, user create screen](https://i.imgur.com/IDrPGjn.png)
+
+![imgur, pLan create screen](https://i.imgur.com/HXGY35U.png)
+
+---
+
+## RESTful routing
+#### user
+
+| Method | Action | Description |
+|:------:|:------:|:-----------:|
+| POST   | /users | Create new user |
+| GET    | /users/new | Render form for creating new User |
+| PUT    | /users/:id | Edit User |
+| DELETE | /users/:id | Delete User |
+
+#### pLans
+| Method | Action | Description |
+|:------:|:------:|:-----------:|
+| GET    | /users/:id/plans | Show all pLans |
+| POST   | /users/:id/plans | Create new user |
+| GET    | /users/:id/plans/new | Render form for creating new pLan |
+| PUT    | /users/:id/plans | Edit pLan |
+| DELETE | /users/:id/plans/:id | Delete pLan |
