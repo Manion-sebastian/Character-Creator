@@ -21,6 +21,7 @@ I will be relying on Cloudinary for media processing and editing.
 ## Will I be using a CSS Framework?
 #### Yes, ~~Bootstrap 5~~ Tailwind
  ~~I will be using Bootstrap for the styling of the application as it is easy to use and very flexible in usage.~~
+ 
  I've used Bootstrap before many times and I want to learn something new so I will be using Tailwind
 
 ## What will be used for this Project?
