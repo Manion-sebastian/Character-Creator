@@ -1,13 +1,25 @@
-<div class="m-2 text-red-600 border-black border-2 bg-white bg-opacity-10 -skew-x-12 ring ">
-  <h1 class="text-4xl font-bold underline object-center bg-grey-100 uppercase font-thin ">
-    hello world!
-  </h1>
+<div id="page" class="bg-gray-700 w-screen h-screen p-10 ">
+  <div class="grid-col-2 bg-gray-100">
+    <div id="accountForm" class="bg-gray-300  h-auto">
+      <form action="/users" method="post" class="p-10">
+        <!-- <input type="image"> -->
+        <label for="firstName">First Name: </label>
+        <input type="text" id="firstName" name="fName" required>
+        <label for="lastName">Last Name: </label>
+        <input type="text" id="lastName" name="lName" required>
+        <label for="email">Email: </label>
+        <input type="email" id="email" name="email" required>
+        <label for="password">Password: </label>
+        <input type="password" id="password" name="password" required>
+        <button type="submit" class="btn-primary">Create Account</button>
+      </form>
+    </div>
+    <div id="testamonials" class="bg-green-200 p-10">
+      <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo dignissimos quibusdam corporis laboriosam voluptatum sunt fugit, laborum velit dolor, voluptas suscipit. Natus cum reiciendis, fugit aperiam pariatur unde totam nisi.</h1>
+    </div>
+    <div id="instructions" class="bg-pink-100 p-10">
+      <h1>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nisi quia velit labore accusantium distinctio ratione reprehenderit necessitatibus, eveniet, nobis, rerum nihil itaque dolores! Quos ad iusto, delectus commodi rem distinctio!</h1>
+    </div>
+  </div>
+  
 </div>
-
-<button class="py-2 px-4 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75">
-  Test
-</button>
-
-<button class="btn-primary">
-  test w/ apply
-</button>
