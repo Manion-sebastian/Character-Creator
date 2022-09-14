@@ -2,9 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-    /* background-color: aqua; */
-}
-
 /* to run tailwind */
 /* npx tailwindcss -i public/assets/css/input.css -o public/assets/css/output.css --watch */
+
+@layer components {
+    .btn-primary {
+        @apply py-2 px-4 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75
+    }
+}
