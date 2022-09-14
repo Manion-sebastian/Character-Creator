@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    /* background-color: aqua; */
+}
+
+/* to run tailwind */
+/* npx tailwindcss -i public/assets/css/input.css -o public/assets/css/output.css --watch */
