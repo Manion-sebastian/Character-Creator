@@ -11,7 +11,7 @@ const PORT = 3000
 app.set('view engine', 'ejs')
 app.use(layout)
 app.use(express.static(__dirname + '/public/'))
-app.use(express.static(__dirname + '/dist'))
+app.use(express.static(__dirname + '/dist/'))
 
 app.listen(PORT, () => {
     console.log(`Intruder at ${PORT}`)

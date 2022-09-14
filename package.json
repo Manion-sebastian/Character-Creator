@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "tailwind:css":"postcss /public/assets/css/tailwind.css -o /public/assets/css/style.css",
+    "start": "npm run tailwind:css && node server"
   },
   "repository": {
     "type": "git",
