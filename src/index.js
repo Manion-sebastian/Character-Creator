@@ -9,15 +9,17 @@ const app = express()
 const PORT = 3000
 
 app.set('view engine', 'ejs')
-app.use(express.static(__dirname + '/public'))
 app.use(layout)
+app.use(express.static(__dirname + '/public/'))
+app.use(express.static(__dirname + '/dist/'))
 
 app.listen(PORT, () => {
     console.log(`Intruder at ${PORT}`)
 } )
 
 app.get('/', (req,res) => {
-    res.send('working')
+    // res.send('working')
+    res.render('home')
 })
 
 
