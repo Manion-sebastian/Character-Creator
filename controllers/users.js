@@ -49,6 +49,11 @@ router.post('/', async (req,res) => {
     }
 })
 
+router.get('/login', (req,res) => {
+    res.render('users/login', 
+    {message: req.query.message ? req.query.message : null})
+})
+
 router.post('/login', async (req,res) => {
     try {
         const user = await db.user.findOne({
