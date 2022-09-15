@@ -10,8 +10,23 @@
     <!-- <script src="https://cdn.tailwindcss.com"></script> -->
 </head>
 <body>
-    <nav>
+    <nav class="bg-gray-800">
+        <div class="mx-auto w-fit text-white font-bold ">
+            <h1 class="inline text-[72px] ">p<span class="text-yellow-200">L</span>an</h1>
+            <div id="nav" class="inline-block text-[32px] uppercase">
+                <div class="item-container h-[30px] mb-[80px] w-100 mx-5">
+                  <a href="" class="mr-5">log In</a>
+                  <a href="" class="mr-5">Log Out</a>
+                  <a href="" class="mr-5">create pLan</a>
+                  <a href="" class="mr-5">add photos</a>
+                  <a href="/users" class="text-red-700">INSIDE</a>
+              </div>
+            </div>
+          </div>
     </nav>
     <%- body %>
+    <footer class="bg-gray-800 h-[60px] text-center text-[45px]">
+        <h1 class="mb-[60px] bg-gray-800 text-white">Copyright Sebastian Manion ©</h1>
+    </footer>
 </body>
 </html>

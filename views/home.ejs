@@ -1,28 +1,16 @@
 <div id="page" class="bg-gray-700 w-screen h-screen p-10">
-  <div class="mx-auto w-fit text-white font-bold ">
-    <h1 class="inline text-[72px] ">p<span class="text-yellow-200">L</span>an</h1>
-    <div id="nav" class="inline-block text-[32px] uppercase">
-        <div class="item-container h-[30px] mb-[80px] w-100 mx-5">
-          <a href="" class="mr-5">log In</a>
-          <a href="" class="mr-5">Log Out</a>
-          <a href="" class="mr-5">create pLan</a>
-          <a href="" class="mr-5">add photos</a>
-      </div>
-    </div>
-
-  </div>
   <div class="grid grid-col-3 grid-row-2 gap-x-5 w-fit mx-auto">
     <div id="accountForm" class=" rounded-3xl bg-gray-300   col-start-1 col-end-3 row-span-2 max-h-xl">
       <form action="/users" method="post" class="p-16 flex flex-col flex-no-wrap font-bold uppercase">
         <!-- <input type="image"> -->
         <label for="firstName">First Name </label>
-        <input type="text" id="firstName" name="fName" class="rounded-xl w-[500px] h-[40px] hover:ring text-center  focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75 mb-5" required>
+        <input type="text" id="firstName" name="fName" class="rounded-xl w-[500px] h-[40px] hover:ring text-center  focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75 my-5" required>
         <label for="lastName">Last Name</label>
-        <input type="text" id="lastName" name="lName" class="rounded-xl w-[500px] h-[40px] hover:ring text-center  focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75 mb-5" required>
+        <input type="text" id="lastName" name="lName" class="rounded-xl w-[500px] h-[40px] hover:ring text-center  focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75 my-5" required>
         <label for="email">Email </label>
-        <input type="email" id="email" name="email" class="rounded-xl w-[500px] h-[40px] hover:ring text-center  focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75 mb-5" required>
+        <input type="email" id="email" name="email" class="rounded-xl w-[500px] h-[40px] hover:ring text-center  focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75 my-5" required>
         <label for="password">Password </label>
-        <input type="password" id="password" name="password" class="rounded-xl w-[500px] h-[40px] hover:ring text-center  focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75" required>
+        <input type="password" id="password" name="password" class="rounded-xl w-[500px] h-[40px] hover:ring text-center  focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75 mt-5" required>
         <button type="submit" class="btn-primary mt-10 w-1/2 mx-auto h-[45px]">Create Account</button>
       </form>
     </div>
