@@ -1,4 +1,4 @@
-sequelize model:create --name user --attributes first_name:string,last_name:string,email:string,profile_picture:string
+sequelize model:create --name user --attributes first_name:string,last_name:string,email:string,password:string,profile_picture:string
 
 sequelize model:create --name plan --attributes name:string,description:string,content:string,icon_image:string,banner_image:string,userId:integer
 
