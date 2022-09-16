@@ -1,5 +1,4 @@
 
-<h1 class="text-center">Hello, <%=user.first_name%> <%=user.last_name%></h1>
 
 <div class="grid grid-col-4 gap-5 text-center px-[120px] mx-auto">
 
@@ -23,8 +22,10 @@
         </div>
     </div>
 
-    <div id="userInfo" class="col-start-4 col-end-4 grid-row-4 bg-red-300 h-full">
-     Name: Email: etc
+    <div id="userInfo" class=" p-10 col-start-4 col-end-4 grid-row-4 h-fit ">
+        <div class="inline bg-red-300"><img class=" w-1/6" src="<%=user.profile_picture%>" alt="<%=user.first_name%> <%=user.last_name%>">
+        Welcome <%=user.first_name%> <%=user.last_name%>
+        <a href="" class="uppercase font-bold">User Settings</a></div>
     </div>
     
 
