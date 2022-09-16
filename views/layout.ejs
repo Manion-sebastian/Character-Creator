@@ -12,15 +12,15 @@
         <div id="content-wrap" class="pb-[40px]">
             <nav class="bg-gray-800">
                 <div class="mx-auto w-fit text-white font-bold ">
-                    <h1 class="inline text-[72px] ">p<span class="text-yellow-200">L</span>an</h1>
+                    <a href="/" class="inline text-[72px] ">p<span class="text-yellow-200">L</span>an</a>
                     <div id="nav" class="inline-block text-[32px] uppercase">
                         <div class="item-container h-[30px] mx-5">
-                          <a href="/users/login" class="mr-5">log In</a>
-                          <a href="/users/logout" class="mr-5">Log Out</a>
-                          <a href="" class="mr-5">create pLan</a>
-                          <a href="" class="mr-5">add photos</a>
-                          <a href="/users" class="text-red-700">INSIDE</a>
-                          <a href="/../" class="text-red-700">OUTSIDE</a>
+                        <% if(user) { %>
+                            <a href="/users/profile" class="mr-5">profile</a>
+                            <a href="/users/logout" class="mr-5">Log Out</a>
+                        <% } else if (!user) { %>
+                            <a href="/users/login" class="mr-5">log In</a>
+                        <% } %>
                       </div>
                     </div>
                   </div>
