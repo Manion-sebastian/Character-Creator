@@ -1,21 +1,27 @@
+// base requirements
 require('dotenv').config()
 const express = require('express')
-const cloudinary = require('cloudinary').v2
 const layout = require('express-ejs-layouts')
-const axios = require('axios')
-const ejs = require('ejs')
-const cookieParser = require('cookie-parser')
-const crypto = require('crypto-js')
 const db = require('./models')
+
+// images
+const cloudinary = require('cloudinary').v2
+const axios = require('axios')
 const app = express()
-const PORT = 3000
+
+// ejs and routes
 app.set('view engine', 'ejs')
 app.use(layout)
 app.use(express.static(__dirname + '/public/'))
-app.use(express.urlencoded({extended:false}))
+app.use(express.urlencoded({extended:false})) 
+
+// auth
+const cookieParser = require('cookie-parser')
+const crypto = require('crypto-js')
 app.use(cookieParser())
 
-app.use('/users', require('./controllers/users.js'))
+// routes
+const PORT = process.env.PORT || 3000
 
 // user auth copied
 app.use(async (req, res, next) => {
@@ -30,15 +36,16 @@ app.use(async (req, res, next) => {
     next()
 })
 
-app.listen(PORT, () => {
-    console.log(`Intruder at ${PORT}`)
-} )
 
 app.get('/', (req,res) => {
     // res.send('working')
     res.render('home')
 })
 
+
+app.listen(PORT, () => {
+    console.log(`Intruder at ${PORT}`)
+} )
 
 // test for cloudinary
 // console.log(cloudinary.config().cloud_name)
@@ -50,3 +57,4 @@ app.get('/', (req,res) => {
 //     .catch(error => {console.warn(error)})
 
 
+app.use('/users', require('./controllers/users.js'))

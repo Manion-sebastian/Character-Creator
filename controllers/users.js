@@ -40,7 +40,7 @@ router.post('/', async (req,res) => {
             const encryptedUserId = crypto.AES.encrypt(newUser.id.toString(), process.env.ENC_SECRET)
             const encryptedUserIdString = encryptedUserId.toString()
             res.cookie('userId', encryptedUserIdString)
-            res.redirect('./user/profile')
+            res.redirect('./users/profile')
 
         }
 
@@ -61,6 +61,7 @@ router.post('/login', async (req,res) => {
                 email: req.body.email
             }
         })
+        console.log('user found')
         const noLoginMessage = 'Incorrect username or password'
         if (!user){
             console.log('user not found') 
