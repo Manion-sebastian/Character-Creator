@@ -1,0 +1,17 @@
+<div id="content-wrapper" class=" py-[60px] ">
+    <div class="grid grid-col-3 grid-row-2 gap-x-5 w-fit mx-auto ">
+       <div id="accountForm" class=" rounded-3xl bg-gray-300   col-start-1 col-end-3 row-span-2 max-h-xl">
+          <form action="/users/profile" method="post" class="p-16 flex flex-col flex-no-wrap font-bold uppercase"> <!-- get update working -->
+           <label for="firstName">First Name </label>
+           <input type="text" id="firstName" name="fName" class="rounded-xl w-[500px] h-[40px] hover:ring text-center  focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75 my-5" required>
+           <label for="lastName">Last Name</label>
+           <input type="text" id="lastName" name="lName" class="rounded-xl w-[500px] h-[40px] hover:ring text-center  focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75 my-5" required>
+           <label for="email">Email </label>
+           <input type="email" id="email" name="email" class="rounded-xl w-[500px] h-[40px] hover:ring text-center  focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75 my-5" required>
+           <label for="profile_picture">Profile Picture</label>
+           <input type="str" id="profile_picture" name="pPic" value="https://i.kym-cdn.com/entries/icons/original/000/013/564/doge.jpg"class="rounded-xl w-[500px] h-[40px] hover:ring text-center  focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75 mt-5" required>
+           <button type="submit" class="btn-primary mt-10 w-1/2 mx-auto h-[45px]">Update Information</button>
+         </form>
+       </div>
+     </div>
+  </div>
