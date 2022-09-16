@@ -101,4 +101,18 @@ router.get('/profile', (req,res) => {
     }
 })
 
+router.get('/profile/edit', async (req,res) => {
+    try {
+        await db.user.update({
+            first_name: req.body.fName,
+            last_name: req.body.lName,
+            email: req.body.email,
+            profile_picture: req.body.profile
+        })
+        res.redirect('/users/profile')
+    } catch (error) {
+        console.warn(error)
+    }
+})
+
 module.exports = router
