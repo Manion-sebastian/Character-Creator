@@ -5,6 +5,8 @@ const crypto = require('crypto-js')
 const bcrypt = require('bcrypt')
 const methodOverride = require('method-override')
 const cloudinary = require('cloudinary').v2
+const multer = require('multer')
+const upload = multer({dest: './uploads/'})
 
 router.use(methodOverride('_method'))
 
