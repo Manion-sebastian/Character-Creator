@@ -3,22 +3,16 @@ const router = express.Router()
 const db = require('../models')
 const crypto = require('crypto-js')
 const bcrypt = require('bcrypt')
+const methodOverride = require('method-override')
+const cloudinary = require('cloudinary').v2
+
+router.use(methodOverride('_method'))
+
+
 
 router.get('/', (req,res) => {
     res.render('../views/users/home')
 })
-
-// router.post('/', async (req,res) => {
-//     res.send(req.body)
-//     await db.user.create({
-//         first_name: req.body.fName,
-//         last_name: req.body.lName,
-//         email: req.body.email,
-//         profile_picture: req.body.profile
-
-//     })
-
-// })
 
 router.post('/', async (req,res) => {
     try {
@@ -101,13 +95,21 @@ router.get('/profile', (req,res) => {
     }
 })
 
-router.get('/profile/edit', async (req,res) => {
+router.get('/profile/edit', (req,res) => {
+    res.render('./users/info', {user: res.locals.user})
+})
+
+router.put('/profile/edit', async (req,res) => {
     try {
         await db.user.update({
             first_name: req.body.fName,
             last_name: req.body.lName,
             email: req.body.email,
-            profile_picture: req.body.profile
+            profile_picture: req.body.pPic
+        }, {
+            where: {
+                email: req.body.email
+            }
         })
         res.redirect('/users/profile')
     } catch (error) {
