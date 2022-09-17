@@ -118,4 +118,29 @@ router.put('/profile/edit', async (req,res) => {
     }
 })
 
+router.get('/profile/photo', (req,res) => {
+    res.render('./users/photo', {user: res.locals.user})
+})
+
+router.put('/profile/photo', upload.single('profile_picture'), async (req,res) => {
+    try {
+        cloudinary.uploader.upload(req.file.path, {transformation: [
+            {gravity: "face", height: 400, width: 400, crop: "crop"},
+            {radius: "max"},
+            {width: 200, crop: "scale"}]}) 
+            .then(result => {db.user.update({
+                profile_picture: result.secure_url
+            }, {
+                where: {
+                    email: req.locals.user.email
+                } 
+            })})
+            
+            res.redirect('/users/profile')
+    } catch (error) {
+        console.log(error)
+    }
+    
+})
+
 module.exports = router

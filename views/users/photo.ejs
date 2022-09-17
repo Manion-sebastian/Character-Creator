@@ -1,0 +1,14 @@
+<div id="content-wrapper" class=" py-[60px] ">
+    <div class=" w-fit mx-auto ">
+        <div id="accountForm" class=" rounded-3xl bg-gray-300 max-h-xl">
+            <div class=" w-full">
+                <img src="<%= user.profile_picture %>" alt="<%= user.first_name %><%= user.last_name %>" class=" p-[40px] mx-auto h-[440px] w-[440px] rounded-full">
+            </div>
+          <form enctype="multipart/form-data" action="/users/profile/photo/?_method=PUT" method="post" class="px-10 pb-10 flex flex-col flex-no-wrap font-bold uppercase">
+           <label for="profile_photo">Photo </label>
+           <input type="file" id="profile_photo" name="profile_picture" class="rounded-xl w-[500px] h-[40px] my-5" value="<%= user.profile_photo%>" required>
+           <button type="submit" class="btn-primary mt-10 w-1/2  mx-auto h-[45px]">Update Photo</button>
+         </form>
+       </div>
+     </div>
+  </div>

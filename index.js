@@ -5,6 +5,7 @@ const layout = require('express-ejs-layouts')
 const db = require('./models')
 
 // images
+const cloudinary = require('cloudinary').v2
 const axios = require('axios')
 const app = express()
 
