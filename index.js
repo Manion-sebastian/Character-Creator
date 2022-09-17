@@ -60,3 +60,4 @@ app.listen(PORT, () => {
 
 
 app.use('/users', require('./controllers/users.js'))
+app.use('/plans', require('./controllers/plans.js'))
