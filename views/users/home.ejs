@@ -4,9 +4,15 @@
 
     <div id="cPlan" class="p-10 grid grid-row-6 h-fit w-[400px]">
         <div id="userInfo" class=" row-start-1 row-end-1 h-fit ">
-            <div class="inline bg-red-300"><img class=" w-1/6" src="<%=user.profile_picture%>" alt="<%=user.first_name%> <%=user.last_name%>">
-            Welcome <%=user.first_name%> <%=user.last_name%>
-            <a href="/users/profile/edit" class="uppercase font-bold">User Settings</a></div>
+            <div class="grid grid-col-2 ">
+                <img class="col-start-1 col-end-1 " src="<%=user.profile_picture%>" alt="<%=user.first_name%> <%=user.last_name%>">
+                <div class="col-start-2 col-end-2 flex flex-col flex-no-wrap grid-row-4">
+                    <h1 class="row-start-1 bg-gray-300 opacity-75 ">Welcome</h1>
+                    <h1 class="row-start-2 bg-gray-300 opacity-75  mt-[20px]"><%=user.first_name%></h1>
+                    <a href="/users/profile/edit" class="uppercase font-bold row-start-3 bg-gray-300 opacity-75  mt-[20px]">User</a>
+                    <a href="/users/profile/photo/edit" class="uppercase font-bold row-start-4 bg-gray-300 opacity-75  mt-[20px]">photo</a>
+                </div>
+            </div>
         </div>
         <div class=" row-start-2 bg-red-300 ">
             <a href="" class="font-bold ">CREATE NEW <span class="">pLan</span></a>

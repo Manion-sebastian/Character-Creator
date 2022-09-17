@@ -107,7 +107,6 @@ router.put('/profile/edit', async (req,res) => {
             first_name: req.body.fName,
             last_name: req.body.lName,
             email: req.body.email,
-            profile_picture: req.body.pPic
         }, {
             where: {
                 email: req.body.email

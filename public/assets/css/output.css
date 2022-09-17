@@ -618,6 +618,14 @@ video {
   grid-column-end: 4;
 }
 
+.col-end-1 {
+  grid-column-end: 1;
+}
+
+.col-end-2 {
+  grid-column-end: 2;
+}
+
 .row-span-2 {
   grid-row: span 2 / span 2;
 }
@@ -632,6 +640,10 @@ video {
 
 .row-start-3 {
   grid-row-start: 3;
+}
+
+.row-start-4 {
+  grid-row-start: 4;
 }
 
 .row-end-1 {
@@ -661,6 +673,16 @@ video {
   margin-right: 1.25rem;
 }
 
+.my-auto {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.my-\[20px\] {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
 .mt-5 {
   margin-top: 1.25rem;
 }
@@ -675,6 +697,10 @@ video {
 
 .mr-5 {
   margin-right: 1.25rem;
+}
+
+.mt-\[20px\] {
+  margin-top: 20px;
 }
 
 .inline-block {
@@ -930,6 +956,10 @@ video {
 .text-red-700 {
   --tw-text-opacity: 1;
   color: rgb(185 28 28 / var(--tw-text-opacity));
+}
+
+.opacity-75 {
+  opacity: 0.75;
 }
 
 /* to run tailwind */
