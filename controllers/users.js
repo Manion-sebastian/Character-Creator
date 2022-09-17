@@ -13,9 +13,6 @@ router.use(methodOverride('_method'))
 
 
 
-router.get('/', (req,res) => {
-    res.render('../views/users/home')
-})
 
 router.post('/', async (req,res) => {
     try {
