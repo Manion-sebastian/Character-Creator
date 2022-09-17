@@ -7,6 +7,7 @@
           <form enctype="multipart/form-data" action="/users/profile/photo/?_method=PUT" method="post" class="px-10 pb-10 flex flex-col flex-no-wrap font-bold uppercase">
            <label for="profile_photo">Photo </label>
            <input type="file" id="profile_photo" name="profile_picture" class="rounded-xl w-[500px] h-[40px] my-5" value="<%= user.profile_photo%>" required>
+           <input type="email" id="email" name="email" value="<%= user.email %>" hidden>
            <button type="submit" class="btn-primary mt-10 w-1/2  mx-auto h-[45px]">Update Photo</button>
          </form>
        </div>

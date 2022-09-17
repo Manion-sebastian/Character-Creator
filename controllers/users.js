@@ -6,6 +6,7 @@ const bcrypt = require('bcrypt')
 const methodOverride = require('method-override')
 const cloudinary = require('cloudinary').v2
 const multer = require('multer')
+const user = require('../models/user')
 const upload = multer({dest: './uploads/'})
 
 router.use(methodOverride('_method'))
@@ -124,20 +125,25 @@ router.get('/profile/photo', (req,res) => {
 
 router.put('/profile/photo', upload.single('profile_picture'), async (req,res) => {
     try {
-        cloudinary.uploader.upload(req.file.path, {transformation: [
+       await cloudinary.uploader.upload(req.file.path, {transformation: [
             {gravity: "face", height: 400, width: 400, crop: "crop"},
             {radius: "max"},
-            {width: 200, crop: "scale"}]}) 
-            .then(result => {db.user.update({
-                profile_picture: result.secure_url
-            }, {
-                where: {
-                    email: req.locals.user.email
-                } 
-            })})
-            
+            {width: 200, crop: "scale"}]},
+            (error, result) => {
+                if (result) {
+                    console.log(result)
+                    db.user.update({
+                        profile_picture: result.secure_url
+                    }, {
+                        where: {
+                            email: req.body.email
+                        } 
+                    })
+                }
+            }) 
+
             res.redirect('/users/profile')
-    } catch (error) {
+    } catch(error) {
         console.log(error)
     }
     
