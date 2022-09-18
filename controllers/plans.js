@@ -30,4 +30,14 @@ router.post('/', async (req,res) => {
     }
 })
 
+router.get('/show/:plan', async (req, res) => {
+    const findPlan = await db.plan.findOne({
+        where: {
+            userId: res.locals.user.id,
+            name: req.params.plan
+        }
+    })
+    res.render('./plans/show', {plan: findPlan})
+})
+
 module.exports = router
