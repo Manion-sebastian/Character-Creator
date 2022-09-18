@@ -10,7 +10,7 @@ const user = require('../models/user')
 const upload = multer({dest: './uploads/'})
 
 router.use(methodOverride('_method'))
-
+router.use(express.urlencoded({extended:false}))
 
 
 
@@ -118,9 +118,14 @@ router.put('/profile/edit', async (req,res) => {
             email: req.body.email,
         }, {
             where: {
-                id: req.body.email
+                id: res.locals.user.id
             }
         })
+        console.log(req.body.fName)
+        console.log(req.body.lName)
+        console.log(req.body.email)
+        console.log(res.locals.user.first_name)
+        console.log(res.locals.user.id)
         res.redirect('/users/profile')
     } catch (error) {
         console.warn(error)

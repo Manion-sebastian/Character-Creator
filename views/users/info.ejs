@@ -3,7 +3,7 @@
     <div class="grid grid-col-3 grid-row-2 gap-x-5 w-fit mx-auto ">
        <div id="accountForm" class=" rounded-3xl bg-gray-300 max-h-xl">
           <a href="/users/profile/photo" class="uppercase font-bold row-start-4 bg-gray-300 opacity-75  mt-[20px]">Edit Photo</a>
-          <form enctype="multipart/form-data" action="/users/profile/edit/?_method=PUT" method="post" class="p-16 flex flex-col flex-no-wrap font-bold uppercase">
+          <form action="/users/profile/edit/?_method=PUT" method="post" class="p-16 flex flex-col flex-no-wrap font-bold uppercase">
            <label for="firstName">First Name </label>
            <input type="text" id="firstName" name="fName" class="rounded-xl w-[500px] h-[40px] hover:ring text-center  focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75 my-5" value="<%= user.first_name %>" required>
            <label for="lastName">Last Name</label>
