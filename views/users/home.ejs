@@ -1,39 +1,10 @@
 
-
-<div class="grid grid-col-3 text-center px-[120px] mx-auto">
-    <input type="number" hidden value="<% user.userId %> ">
-
-    <div id="cPlan" class="p-10 grid grid-row-6 h-fit w-[400px]">
-        
-        <div class=" row-start-2 bg-red-300 ">
-            <a href="/plans" class="font-bold ">CREATE NEW <span class="">pLan</span></a>
-        </div>
-        <div id="pLans" class="row-start-3 row-end-6 bg-blue-300 min-h-[500px]">
-          
-        </div>
+<div id="pageStructure" class="px-[120px] py-[40px] w-screen h-screen grid grid-col-6">
+    <div id="planSection" class="bg-pink-200 min-h-full col-start-1 col-end-1">
+        <div class="bg-red-100 h-[300px] w-full" ></div>
     </div>
+    <div id="showPlan" class=" bg-blue-200 min-h-full col-start-2 col-end-6">
 
-    <% plans.forEach(plan => { %>
-    <div id="plan" class="col-start-2 col-end-3 grid-row-2 mx-auto p-10  ">
-        <div id="imageBanner" class=" bg-green-300 h-[200px] row-start-1">
-            <img src="<%= plan.banner_imageR%>" alt="">
-
-        </div>
-
-            
-            <div id="planContent" class=" bg-gray-300 min-w-[900px] min-h-[400px] rounded-b-xl row-start-2">
-                    <img src="<%= plan.icon_image %>" alt="" class="rounded-full h-[100px]">
-                        <%= plan.name %>
-                        <br>
-                        <%= plan.description %>
-                        <br>
-                        <%= plan.content %>
-                    
-                <% }) %>
-        </div>
     </div>
-
-    
-    
 
 </div>
