@@ -12,17 +12,19 @@ router.get('/', (req,res) => {
 
 router.post('/', async (req,res) => {
     try {
-        console.log(req.body)
-        await db.plan.create({
+        const user = await db.user.findOne({
+            where: {
+                id: res.locals.user.id 
+            }
+        })
+        const newPlan = await user.createPlan({
             name: req.body.name,
             description: req.body.desc,
             content: req.body.content,
             icon_image: 'https://pbs.twimg.com/media/EZoLX2BX0AIN5yJ.jpg',
             banner_image: 'https://pbs.twimg.com/media/EZoLX2BX0AIN5yJ.jpg',
-            userId: req.body.userId
         })
-        res.redirect('./users/profile')
-
+        res.redirect('/users/profile')
     } catch(error) {
         console.log(error)
     }

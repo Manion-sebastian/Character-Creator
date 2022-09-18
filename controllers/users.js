@@ -14,6 +14,7 @@ router.use(methodOverride('_method'))
 
 
 
+
 router.post('/', async (req,res) => {
     try {
         const hashedPassword = bcrypt.hashSync(req.body.password, 12)
@@ -84,16 +85,26 @@ router.get('/logout', (req,res) => {
     res.redirect('/')
 })
 
-router.get('/profile', (req,res) => {
-    // if user is not logged in redirect 
-    if (!res.locals.user){
-        res.redirect ('/users/login?message=You must authorize before you are authroized to view this resource')
-    } else {
-        res.render('./users/home', {
-            user: res.locals.user
-        })
-    }
-})
+router.get('/profile', async (req,res) => {
+    try {
+        if (!res.locals.user){
+            res.redirect ('/users/login?message=You must authorize before you are authroized to view this resource')
+        } else {
+            const user = await db.user.findOne({
+                where: {
+                    id: res.locals.user.id
+                }
+            })
+            const plans = await user.getPlans()
+            res.render('./users/home', {
+                user: res.locals.user, plans
+            })
+        }
+    }catch(error) {
+        console.warn(error)
+    }})
+        
+    
 
 router.get('/profile/edit', (req,res) => {
     res.render('./users/info', {user: res.locals.user})

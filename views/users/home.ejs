@@ -13,14 +13,23 @@
         </div>
     </div>
 
-    <div id="plan" class="col-start-2 col-end-3 grid-row-2 mx-auto p-10">
-        <div id="imageBanner" class=" bg-green-300 h-[200px] row-start-1">imga</div>
-        <div id="planContent" class=" bg-gray-300 min-h-[400px] rounded-b-xl row-start-2">
-            <div class="max-w-6xl mx-auto p-10">
-                plan content
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae aspernatur labore minima. Fugit animi culpa minima itaque eveniet repellat dignissimos voluptatum sed quod, molestiae quisquam obcaecati aspernatur aperiam iusto dolores! Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates quia molestias nesciunt ducimus. A dolores, porro suscipit ratione, mollitia perspiciatis animi, ab aut expedita enim nisi nulla harum sequi odio.
+    <% plans.forEach(plan => { %>
+    <div id="plan" class="col-start-2 col-end-3 grid-row-2 mx-auto p-10  ">
+        <div id="imageBanner" class=" bg-green-300 h-[200px] row-start-1">
+            <img src="<%= plan.banner_imageR%>" alt="">
 
-            </div>
+        </div>
+
+            
+            <div id="planContent" class=" bg-gray-300 min-w-[900px] min-h-[400px] rounded-b-xl row-start-2">
+                    <img src="<%= plan.icon_image %>" alt="" class="rounded-full h-[100px]">
+                        <%= plan.name %>
+                        <br>
+                        <%= plan.description %>
+                        <br>
+                        <%= plan.content %>
+                    
+                <% }) %>
         </div>
     </div>
 
