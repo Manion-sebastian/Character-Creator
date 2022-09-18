@@ -121,11 +121,6 @@ router.put('/profile/edit', async (req,res) => {
                 id: res.locals.user.id
             }
         })
-        console.log(req.body.fName)
-        console.log(req.body.lName)
-        console.log(req.body.email)
-        console.log(res.locals.user.first_name)
-        console.log(res.locals.user.id)
         res.redirect('/users/profile')
     } catch (error) {
         console.warn(error)

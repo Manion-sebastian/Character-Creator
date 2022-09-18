@@ -2,9 +2,14 @@
 <% let latestPlan = plans.length - 1 %>
 <div id="pageStructure" class="px-[120px] py-[40px] w-screen h-fit grid grid-col-5 gap-16">
     <div id="planSection" class="bg-pink-200 min-h-[400px] col-start-1 col-end-1">
-        <div class="bg-red-100 h-[300px] min-w-[350px]" >
+        <div class="min-w-[350px]" >
             <a href="/plans">Create Plan</a>
         </div>
+        <% for (let i = 0; i < latestPlan; i++) { %>
+           <div>
+            <a href=""><%= plans[i].title %></a>
+           </div> 
+        <% } %>
     </div>
     <div id="showPlan" class=" bg-blue-200 h-fit w-full col-start-2 col-end-5">
         <% if(plans && latestPlan > 0){ %>
