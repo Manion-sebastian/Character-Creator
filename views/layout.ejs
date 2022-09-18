@@ -16,11 +16,12 @@
                 </div>
                 <div id="links" class="h-fit mx-5 font-bold text-white text-[32px] uppercase mt-[40px]">
                     <% if(user) { %>
-                        <a href="/users/logout" class="mr-[120px]">Log Out</a>
-                        <a href="/users/profile" class="mr-5">home</a>
+                        <a href="/users/profile" class="ml-5 mr-[820px]">home</a>
+                        <a href="/users/logout" class="mr-5">Log Out</a>
                     <% } else if (!user) { %>
                         <a href="/users/login" class="mr-5">log In</a>
                     <% } %>
+                    <% if(user) { %>
                     <a href="/users/profile/edit"><%= user.first_name %> <%= user.last_name %></a>
                 </div>
                     <div id="userInfo" class="h-fit w-fit">
@@ -28,6 +29,7 @@
                             <img class="rounded-full h-[50px] mt-[40px]" src="<%=user.profile_picture%>" alt="<%=user.first_name%> <%=user.last_name%>">
                         </div>
                     </div>
+                    <% } %>
             </nav>
             <%- body %>  
             <footer class="bg-gray-800 h-[40px] text-center text-[25px]  absolute bottom-0 w-full">
