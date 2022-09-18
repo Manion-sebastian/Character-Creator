@@ -10,28 +10,23 @@
 <body>
     <div id="base" class="min-h-screen max-w-screen bg-gray-700 relative">
         <div id="content-wrap" class="pb-[40px]">
-            <nav class="bg-gray-800 flex flex-row justify-center">
+            <nav class="bg-gray-800 flex flex-row justify-center ">
                 <div id="logo">
-                    <a href="/" class="inline text-[72px] col-start-1 w-fit text-white font-bold ">p<span class="text-yellow-200">L</span>an</a>
+                    <a href="/" class=" text-[72px] col-start-1 w-fit text-white font-bold ">p<span class="text-yellow-200">L</span>an</a>
                 </div>
-                <div id="links" class="item-container h-fit mx-5 inline-block text-[32px] uppercase">
+                <div id="links" class="h-fit mx-5 font-bold text-white text-[32px] uppercase mt-[40px]">
                     <% if(user) { %>
-                        <a href="/users/profile" class="mr-5">profile</a>
-                        <a href="/users/logout" class="mr-5">Log Out</a>
+                        <a href="/users/logout" class="mr-[120px]">Log Out</a>
+                        <a href="/users/profile" class="mr-5">home</a>
                     <% } else if (!user) { %>
                         <a href="/users/login" class="mr-5">log In</a>
                     <% } %>
+                    <a href="/users/profile/edit"><%= user.first_name %> <%= user.last_name %></a>
                 </div>
                     <div id="userInfo" class="h-fit w-fit">
                         <div>
-                            <img class="rounded-full h-[100px]" src="<%=user.profile_picture%>" alt="<%=user.first_name%> <%=user.last_name%>">
+                            <img class=" ring rounded-full h-[50px] mt-[40px]" src="<%=user.profile_picture%>" alt="<%=user.first_name%> <%=user.last_name%>">
                         </div>
-                        <div class="mr-5">
-                            <h1 class="row-start-1 bg-gray-300 opacity-75 ">Welcome <%=user.first_name%>
-                                <a href="/users/profile/edit" class="uppercase font-bold row-start-3 bg-gray-300 opacity-75  mt-[20px]">User</a>
-                            </h1>
-                        </div>
-
                     </div>
             </nav>
             <%- body %>  
