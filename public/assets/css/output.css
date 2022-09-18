@@ -755,6 +755,18 @@ video {
   margin-left: 2rem;
 }
 
+.mb-4 {
+  margin-bottom: 1rem;
+}
+
+.mt-4 {
+  margin-top: 1rem;
+}
+
+.mt-8 {
+  margin-top: 2rem;
+}
+
 .box-border {
   box-sizing: border-box;
 }
@@ -863,6 +875,10 @@ video {
   width: 440px;
 }
 
+.w-3\/4 {
+  width: 75%;
+}
+
 .min-w-\[350px\] {
   min-width: 350px;
 }
@@ -916,12 +932,20 @@ video {
   border-radius: 9999px;
 }
 
+.rounded-2xl {
+  border-radius: 1rem;
+}
+
 .border-\[5px\] {
   border-width: 5px;
 }
 
 .border-b {
   border-bottom-width: 1px;
+}
+
+.border-t {
+  border-top-width: 1px;
 }
 
 .border-solid {

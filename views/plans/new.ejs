@@ -1,7 +1,7 @@
 <div id="content-wrapper" class=" py-[60px] ">
     <div class="grid grid-col-3 grid-row-2 gap-x-5 w-fit mx-auto ">
        <div id="planForm" class=" rounded-3xl bg-gray-300 max-h-xl">
-          <form action="/plans" method="post" class="p-16 flex flex-col flex-no-wrap font-bold uppercase">
+          <form enctype="multipart/form-data" action="/plans" method="post" class="p-16 flex flex-col flex-no-wrap font-bold uppercase">
             <label for="title">Title</label>
             <input type="text" id="title" name="name"  required>
             <label for="description">Description</label>

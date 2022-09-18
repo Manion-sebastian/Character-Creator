@@ -121,6 +121,7 @@ router.put('/profile/edit', async (req,res) => {
                 id: res.locals.user.id
             }
         })
+
         res.redirect('/users/profile')
     } catch (error) {
         console.warn(error)
