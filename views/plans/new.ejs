@@ -9,11 +9,9 @@
             <label for="content">pLan Content</label>
             <input type="text" id="content" name="content" required>
             <input type="number" id="userId" name="userId" value="<%= user.id %>" required hidden>
+            <label for="banner">Banner File </label>
             <div class="mx-auto">
-              <label class="inline mr-3" for="banner">Banner </label>
               <input class="inline w-1/3" type="file" id="banner" name="banner" >
-              <label class="inline mr-3" for="icon">Icon</label>
-              <input class="inline w-1/3" type="file" id="icon" name="icon" >
             </div>
            <button type="submit" class="btn-primary mt-10 w-1/2 mx-auto h-[45px]">Create Plan</button>
          </form>

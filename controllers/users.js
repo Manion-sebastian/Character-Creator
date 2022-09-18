@@ -22,7 +22,7 @@ router.post('/', async (req,res) => {
             email: req.body.email,
             first_name: req.body.fName,
             last_name: req.body.lName,
-            profile_picture: req.body.profile
+            profile_picture: 'https://res.cloudinary.com/ga-sei-sm/image/upload/v1663527889/blankUser_uwlkty.png'
             }, 
             defaults: {
                 password: hashedPassword
@@ -118,7 +118,7 @@ router.put('/profile/edit', async (req,res) => {
             email: req.body.email,
         }, {
             where: {
-                email: req.body.email
+                id: req.body.email
             }
         })
         res.redirect('/users/profile')
