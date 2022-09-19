@@ -103,7 +103,7 @@ router.put('/edit/:id', async (req,res) => {
 
 router.delete('/:id', async (req,res) => {
     try {
-        console.log(req.params.id)
+        
         await db.plan.destroy({
             where: {
                 id: req.params.id

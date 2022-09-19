@@ -8,15 +8,16 @@
     <link href="/../assets/css/output.css" rel="stylesheet">
 </head>
 <body>
-    <div id="base" class="min-h-screen max-w-screen bg-gray-700 relative">
+    <div id="base" class="min-h-screen max-w-screen bg-gray-100 relative">
         <div id="content-wrap" class="pb-[40px] box-border">
-            <nav class="bg-gray-800 flex flex-row justify-center ">
+            <nav class="bg-gray-900 flex flex-row justify-center ">
                 <div id="logo">
                     <a href="/" class=" text-[72px] col-start-1 w-fit text-white font-bold ">p<span class="text-yellow-200">L</span>an</a>
                 </div>
                 <div id="links" class="h-fit mx-5 font-bold text-white text-[32px] uppercase mt-[40px]">
                     <% if(user) { %>
-                        <a href="/users/profile" class="ml-5 mr-[820px]">home</a>
+                        <a href="/users/profile" class="ml-5 mr-5 ">home</a>
+                        <a href="/plans/all" class="mr-[820px]">all plans</a>
                         <a href="/users/logout" class="mr-5">Log Out</a>
                     <% } else if (!user) { %>
                         <a href="/users/login" class="mr-5">log In</a>
@@ -32,8 +33,8 @@
                     <% } %>
             </nav>
             <%- body %>  
-            <footer class="bg-gray-800 h-[40px] text-center text-[25px]  absolute bottom-0 w-full">
-                <h1 class="bg-gray-800 text-white align-middle ">Sebastian Manion ©</h1>
+            <footer class="bg-gray-900 h-[40px] text-center text-[25px]  absolute bottom-0 w-full">
+                <h1 class="bg-gray-900 text-white align-middle ">Sebastian Manion ©</h1>
             </footer>
         </div>
         

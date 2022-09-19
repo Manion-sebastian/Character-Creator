@@ -1,8 +1,8 @@
 <% if(plans){ %>
 <% let latestPlan = plans.length - 1 %>
 <div id="pageStructure" class="px-[120px] py-[40px] w-screen h-fit grid grid-col-5 gap-16">
-    <div id="planSection" class=" min-h-[400px] min-w-[330px] col-start-1 col-end-1 uppercase text-[32px] text-white font-bold text-center ">
-        <div class=" my-[20px] border-b mx-auto border-white w-[400px]" >
+    <div id="planSection" class=" min-h-[400px] col-start-1 col-end-1 uppercase text-[32px] bg-gray-800 opacity rounded-2xl text-white font-bold text-center ">
+        <div class=" my-[20px] px-8 max-w-[350px] mx-auto" >
             <a  href="/plans">Create Plan</a>
         </div>
         <% let lastPlan = '' %>
@@ -12,13 +12,10 @@
             <% lastPlan = 0 %>
         <% } %>
         <% for (let i = latestPlan - 1; i >= lastPlan; i--) { %>
-           <div>
-            <a  href="/plans/show/<%=plans[i].id%>"><%= plans[i].name %> Plan</a>
+           <div class="max-w-[275px] mx-auto"> 
+            <a   href="/plans/show/<%=plans[i].id%>"><%= plans[i].name %> Plan</a>
            </div> 
         <% } %>
-        <div class="mt-8 border-t border-white w-[400px]">
-            <a href="/plans/all" class="">all plans</a>
-        </div>
     </div>
     <div id="showPlan" class=" h-fit w-full col-start-2 col-end-5">
         <% if(plans && latestPlan >= 0){ %>
