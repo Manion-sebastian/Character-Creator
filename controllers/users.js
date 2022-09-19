@@ -95,7 +95,11 @@ router.get('/profile', async (req,res) => {
                     id: res.locals.user.id
                 }
             })
-            const plans = await user.getPlans()
+            const plans = await user.getPlans({
+            include: [db.type]
+            })
+            console.log(plans[1])
+            console.log(plans[1].types)
             res.render('./users/home', {
                 user: res.locals.user, plans
             })

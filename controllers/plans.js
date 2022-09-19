@@ -66,7 +66,8 @@ router.get('/show/:id', async (req, res) => {
         where: {
             userId: res.locals.user.id,
             id: req.params.id
-        }
+        },
+            include: [db.type]
     })
     res.render('./plans/show', {plan: findPlan})
 })
@@ -80,6 +81,8 @@ router.get('/edit/:id', async (req,res) => {
                 id: req.params.id
             }
         })
+        const type = await findPlan.getTypes()
+        console.log(type)
         res.render('./plans/info', {plan: findPlan})
 
     } catch(error) {
