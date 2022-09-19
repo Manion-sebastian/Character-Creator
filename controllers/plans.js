@@ -35,13 +35,15 @@ router.post('/', upload.single('banner'), async (req,res) => {
             name: req.body.name,
             description: req.body.desc,
             content: req.body.content,
-            icon_image: 'https://pbs.twimg.com/media/EZoLX2BX0AIN5yJ.jpg',
             banner_image: bannerUrl,
         })
-        const [type, typeCreated] = await db.type.findOrCreate({
-            where: {name: req.body.type}
+        const type = await type.findOne({
+            where: {
+                id: req.body.type
+            }
         })
-        await newPlan.addType(type)
+        const addType = await type.addPlan(newPlan)
+        
         
         res.redirect('/users/profile')
     } catch(error) {
