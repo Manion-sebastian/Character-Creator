@@ -18,7 +18,7 @@ module.exports = (sequelize, DataTypes) => {
   plan.init({
     name: DataTypes.STRING,
     description: DataTypes.STRING,
-    content: DataTypes.STRING,
+    content: DataTypes.TEXT,
     banner_image: DataTypes.STRING,
     userId: DataTypes.INTEGER,
     typeId: DataTypes.INTEGER
