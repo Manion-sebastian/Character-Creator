@@ -101,5 +101,19 @@ router.put('/edit/:id', async (req,res) => {
     }
 })
 
+router.delete('/plans/:id', async (req,res) => {
+    try {
+        await db.plan.destroy({
+            where: {
+                id: req.params.id
+            }
+        })
+        res.redirect('./plans/all')
+    } catch(error) {
+        console.log(error)
+    }
+
+})
+
 
 module.exports = router

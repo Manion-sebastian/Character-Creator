@@ -11,4 +11,7 @@
         <div class="mt-5 p-10 h-fit content-wrap uppercase text-[24px] col-start-1 col-end-3 "><%= plan.content %></div>
     </div>
     <a href="/plans/edit/<%= plan.id %>">Edit Plan</a>
+    <form action="/plans/<%= plan.id %>/?_method=DELETE" method="post">
+        <button type="submit">Delete pLan</button>
+    </form>
 </div>
