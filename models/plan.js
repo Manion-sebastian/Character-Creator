@@ -12,16 +12,16 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
       models.plan.belongsTo(models.user)
-      models.plan.belongsToMany(models.type, {through: 'plans_types'})
+      models.plan.belongsTo(models.type)
     }
   }
   plan.init({
     name: DataTypes.STRING,
     description: DataTypes.STRING,
     content: DataTypes.STRING,
-    icon_image: DataTypes.STRING,
     banner_image: DataTypes.STRING,
-    userId: DataTypes.INTEGER
+    userId: DataTypes.INTEGER,
+    typeId: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'plan',
