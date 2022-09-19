@@ -5,7 +5,6 @@
         <div class=" my-[20px] border-b mx-auto border-white w-1/2" >
             <a  href="/plans">Create Plan</a>
         </div>
-        <h1 class="mb-4">Recent Plans</h1>
         <% let lastPlan = '' %>
         <% if (plans.length > 10) { %>
             <% lastPlan = latestPlan - 10 %>
@@ -13,7 +12,7 @@
             <% lastPlan = 0 %>
         <% } %>
         <% for (let i = latestPlan - 1; i >= lastPlan; i--) { %>
-           <div class="text-left pl-10">
+           <div>
             <a  href="/plans/show/<%=plans[i].id%>"><%= plans[i].name %> Plan</a>
            </div> 
         <% } %>
@@ -31,7 +30,7 @@
             </div>
             <div class="col-start-2 col-end-3">
                 <div class=" h-1/4 bg-pink-300 w-full uppercase text-[32px] flex flex-col justify-center">title: <%= plans[latestPlan].name %></div>
-                <div class=" h-1/4 bg-pink-300 w-full uppercase text-[32px] flex flex-col justify-center"><%= plans[latestPlan].types %></div>
+                <div class=" h-1/4 bg-pink-300 w-full uppercase text-[32px] flex flex-col justify-center"><%= plans[latestPlan].type.name %></div>
                 <div class=" h-1/2 bg-pink-400 w-full uppercase text-[22px] flex flex-col justify-center">description: <%= plans[latestPlan].description %></div>
             </div>
             <div class=" p-10 h-fit bg-pink-500 content-wrap uppercase text-[24px] col-start-1 col-end-3 ">content: <%= plans[latestPlan].content %></div>

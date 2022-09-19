@@ -1,14 +1,14 @@
 
- <div id="showPlan" class=" bg-blue-200 h-fit w-3/4 mx-auto mt-10">
+ <div id="showPlan" class=" h-fit w-3/4 mx-auto mt-10 text-center">
     <div class="grid grid-col-3">
-        <div id="banner" class="col-start-1">
+        <div id="banner" class="col-start-1 mx-auto">
                 <img src="<%= plan.banner_image %>" alt="banner" class="">
         </div>
         <div class="col-start-2 col-end-3">
-            <div class=" h-1/4 bg-pink-300 w-full uppercase text-[32px]">title: <%= plan.name %></div>
-            <div class=" h-1/2 bg-pink-400 w-full uppercase text-[22px]">description: <%= plan.description %></div>
+            <div class=" h-1/4 w-full uppercase text-[32px]">title: <%= plan.name %> <%= plan.type.name %></div>
+            <div class=" h-1/2 w-full uppercase text-[22px]">description: <%= plan.description %></div>
         </div>
-        <div class=" p-10 h-fit bg-pink-500 content-wrap uppercase text-[24px] col-start-1 col-end-3 ">content: <%= plan.content %></div>
+        <div class="mt-5 p-10 h-fit content-wrap uppercase text-[24px] col-start-1 col-end-3 "><%= plan.content %></div>
     </div>
     <a href="/plans/edit/<%= plan.id %>">Edit Plan</a>
 </div>

@@ -1,6 +1,6 @@
 <div id="content-wrapper" class=" py-[60px] ">
-    <div class="grid grid-col-3 grid-row-2 gap-x-5 w-fit mx-auto ">
-       <div id="planForm" class=" rounded-3xl bg-gray-300 max-h-xl">
+    <div class="grid grid-col-3 grid-row-2 gap-x-5 w-[900px] mx-auto ">
+       <div id="planForm" class=" rounded-3xl bg-gray-300 max-h-xl max-w-1/2">
           <form action="/plans/edit/<%= plan.id %>?_method=PUT" method="post" class="p-16 flex flex-col flex-no-wrap font-bold uppercase">
             <label for="title">Title</label>
             <input type="text" id="title" name="name" value=" <%= plan.name %> "  required>

@@ -22,7 +22,6 @@ router.post('/', upload.single('banner'), async (req,res) => {
             {height: 300, width: 500, crop: "scale"}]},
             (error, result) => {
                 if (result) {
-                    console.log(result)
                     bannerUrl = result.secure_url
                 }
             })
@@ -36,15 +35,9 @@ router.post('/', upload.single('banner'), async (req,res) => {
             description: req.body.desc,
             content: req.body.content,
             banner_image: bannerUrl,
+            typeId: req.body.type
         })
-        const type = await type.findOne({
-            where: {
-                id: req.body.type
-            }
-        })
-        const addType = await type.addPlan(newPlan)
-        
-        
+
         res.redirect('/users/profile')
     } catch(error) {
         console.log(error)
@@ -83,8 +76,6 @@ router.get('/edit/:id', async (req,res) => {
                 id: req.params.id
             }
         })
-        const type = await findPlan.getTypes()
-        console.log(type)
         res.render('./plans/info', {plan: findPlan})
 
     } catch(error) {

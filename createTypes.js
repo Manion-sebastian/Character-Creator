@@ -1,5 +1,7 @@
 const db = require('./models')
 
+// to poulate types
+
 async function createTypes() {
     try {
         const todo = await db.type.create({
@@ -19,4 +21,4 @@ async function createTypes() {
     }
 }
 
-createTypes()
+// createTypes()

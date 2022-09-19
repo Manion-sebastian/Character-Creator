@@ -29,7 +29,6 @@ router.post('/', async (req,res) => {
             }
         })
         if (!created) {
-            console.log('user exists')
             res.redirect('/users/login?message=Please log into your account to continue')
         } else {
             const encryptedUserId = crypto.AES.encrypt(newUser.id.toString(), process.env.ENC_SECRET)
@@ -58,13 +57,11 @@ router.post('/login', async (req,res) => {
                 email: req.body.email
             }
         })
-        console.log('user found')
+        
         const noLoginMessage = 'Incorrect username or password'
         if (!user){
-            console.log('user not found') 
             res.redirect('/users/login?message=' + noLoginMessage)
         } else if (!bcrypt.compareSync(req.body.password, user.password)) {
-            console.log('wrong password')
             res.redirect('/users/login?message=' + noLoginMessage)
         } else {
             const encryptedUserId = crypto.AES.encrypt(user.id.toString(), process.env.ENC_SECRET)
@@ -94,7 +91,8 @@ router.get('/profile', async (req,res) => {
                 where: {id: res.locals.user.id},
             })
             const plans = await db.plan.findAll({
-                where: {userId: res.locals.user.id}
+                where: {userId: res.locals.user.id},
+                include: [db.type]
             })
             
             res.render('./users/home', {
@@ -143,7 +141,6 @@ router.put('/profile/photo', upload.single('profile_picture'), async (req,res) =
             {width: 200, crop: "scale"}]},
             (error, result) => {
                 if (result) {
-                    console.log(result)
                     db.user.update({
                         profile_picture: result.secure_url
                     }, {
