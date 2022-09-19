@@ -43,28 +43,58 @@ router.post('/', upload.single('banner'), async (req,res) => {
     }
 })
 
-router.get('/show/:plan', async (req, res) => {
+router.get('/all', async (req, res) => {
+    const user = await db.user.findOne({
+        where: {
+            id: res.locals.user.id
+        }
+    })
+    const plans = await user.getPlans()
+    res.render('./plans/all', {plans: plans})
+})
+
+
+router.get('/show/:id', async (req, res) => {
     const findPlan = await db.plan.findOne({
         where: {
             userId: res.locals.user.id,
-            name: req.params.plan
+            id: req.params.id
         }
     })
     res.render('./plans/show', {plan: findPlan})
 })
 
-router.get('/show/all', async (req, res) => {
+router.get('/edit/:id', async (req,res) => {
     try {
-     const findAll = await db.plan.findAll({
-        where: {
-            userId: res.locals.user.id
-        }
-     })
-     console.log()
-     res.render('./plans/all', {plans: findAll})
-    } catch (error) {
+        const findPlan = await db.plan.findOne({
+            where: {
+                userId: res.locals.user.id,
+                id: req.params.id
+            }
+        })
+        res.render('./plans/info', {plan: findPlan})
+
+    } catch(error) {
         console.warn(error)
     }
 })
+
+router.put('/edit/:id', async (req,res) => {
+    try {
+        await db.plan.update({
+            name: req.body.name,
+            description: req.body.desc,
+            content: req.body.content
+        },{
+            where: {
+                id: req.params.id
+            }
+        })
+        res.redirect(`/plans/show/${req.params.id}`)
+    } catch(error) {
+        console.warn(error)
+    }
+})
+
 
 module.exports = router

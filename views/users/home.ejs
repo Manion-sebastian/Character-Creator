@@ -14,11 +14,11 @@
         <% } %>
         <% for (let i = latestPlan - 1; i >= lastPlan; i--) { %>
            <div class="text-left pl-10">
-            <a  href="/plans/show/<%=plans[i].name%>"><%= plans[i].name %> Plan</a>
+            <a  href="/plans/show/<%=plans[i].id%>"><%= plans[i].name %> Plan</a>
            </div> 
         <% } %>
         <div class="mt-8">
-            <a href="/plans/show/all" class="border-t border-white">all plans</a>
+            <a href="/plans/all" class="border-t border-white">all plans</a>
         </div>
     </div>
     <div id="showPlan" class=" h-fit w-full col-start-2 col-end-5">

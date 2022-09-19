@@ -1,0 +1,16 @@
+<div id="content-wrapper" class=" py-[60px] ">
+    <div class="grid grid-col-3 grid-row-2 gap-x-5 w-fit mx-auto ">
+       <div id="planForm" class=" rounded-3xl bg-gray-300 max-h-xl">
+          <form action="/plans/edit/<%= plan.id %>?_method=PUT" method="post" class="p-16 flex flex-col flex-no-wrap font-bold uppercase">
+            <label for="title">Title</label>
+            <input type="text" id="title" name="name" value=" <%= plan.name %> "  required>
+            <label for="description">Description</label>
+            <input type="text" id="description" name="desc" value=" <%= plan.description %> " required>
+            <label for="content">pLan Content</label>
+            <input type="text" id="content" name="content" value=" <%= plan.content %> " required>
+            <input type="number" id="userId" name="userId" value="<%= user.id %>" required hidden>
+           <button type="submit" class="btn-primary mt-10 w-1/2 mx-auto h-[45px]">Edit Plan</button>
+         </form>
+       </div>
+     </div>
+  </div>
