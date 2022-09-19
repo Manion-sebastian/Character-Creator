@@ -14,7 +14,7 @@ router.use(express.urlencoded({extended:false}))
 
 
 
-
+// Creates New User
 router.post('/', async (req,res) => {
     try {
         const hashedPassword = bcrypt.hashSync(req.body.password, 12)
@@ -44,11 +44,13 @@ router.post('/', async (req,res) => {
     }
 })
 
+// Shows Login Page
 router.get('/login', (req,res) => {
     res.render('users/login', 
     {message: req.query.message ? req.query.message : null})
 })
 
+// Logs in User
 router.post('/login', async (req,res) => {
     try {
         const user = await db.user.findOne({
@@ -76,15 +78,13 @@ router.post('/login', async (req,res) => {
     }
 })
 
-router.get('/login', (req,res) => {
-    res.render('./users/login')
-})
-
+// Logs User out
 router.get('/logout', (req,res) => {
     res.clearCookie('userId')
     res.redirect('/')
 })
 
+// Shows home page for logged in User
 router.get('/profile', async (req,res) => {
     try {
         if (!res.locals.user){
@@ -104,12 +104,12 @@ router.get('/profile', async (req,res) => {
         console.warn(error)
     }})
         
-    
-
+// Shows edit page for User Info
 router.get('/profile/edit', (req,res) => {
     res.render('./users/info', {user: res.locals.user})
 })
 
+// Edits User Info
 router.put('/profile/edit', async (req,res) => {
     try {
         await db.user.update({
@@ -128,10 +128,12 @@ router.put('/profile/edit', async (req,res) => {
     }
 })
 
+// Shows User photo info w/ option to change photo
 router.get('/profile/photo', (req,res) => {
     res.render('./users/photo', {user: res.locals.user})
 })
 
+// Edits User photo
 router.put('/profile/photo', upload.single('profile_picture'), async (req,res) => {
     try {
        await cloudinary.uploader.upload(req.file.path, {transformation: [

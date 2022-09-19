@@ -9,10 +9,12 @@ const cloudinary = require('cloudinary').v2
 router.use(express.urlencoded({extended:false})) 
 router.use(methodOverride('_method'))
 
+// Shows Form for making Plan
 router.get('/', (req,res) => {
     res.render('./plans/new', {user: res.locals.user})
 })
 
+// Creates new Plan
 router.post('/', upload.single('banner'), async (req,res) => {
     try {
         let bannerUrl = ''
@@ -36,6 +38,10 @@ router.post('/', upload.single('banner'), async (req,res) => {
             icon_image: 'https://pbs.twimg.com/media/EZoLX2BX0AIN5yJ.jpg',
             banner_image: bannerUrl,
         })
+        const [type, typeCreated] = await db.type.findOrCreate({
+            where: {name: req.body.type}
+        })
+        await newPlan.addType(type)
         
         res.redirect('/users/profile')
     } catch(error) {
@@ -43,6 +49,7 @@ router.post('/', upload.single('banner'), async (req,res) => {
     }
 })
 
+// Shows all plans by user
 router.get('/all', async (req, res) => {
     const user = await db.user.findOne({
         where: {
@@ -53,7 +60,7 @@ router.get('/all', async (req, res) => {
     res.render('./plans/all', {plans: plans})
 })
 
-
+// Shows singular plan by id
 router.get('/show/:id', async (req, res) => {
     const findPlan = await db.plan.findOne({
         where: {
@@ -64,6 +71,7 @@ router.get('/show/:id', async (req, res) => {
     res.render('./plans/show', {plan: findPlan})
 })
 
+// Shows edit form for specific plan
 router.get('/edit/:id', async (req,res) => {
     try {
         const findPlan = await db.plan.findOne({
@@ -79,6 +87,7 @@ router.get('/edit/:id', async (req,res) => {
     }
 })
 
+// Edits singular plan by id
 router.put('/edit/:id', async (req,res) => {
     try {
         await db.plan.update({
