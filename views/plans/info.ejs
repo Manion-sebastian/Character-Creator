@@ -4,10 +4,18 @@
           <form action="/plans/edit/<%= plan.id %>?_method=PUT" method="post" class="p-16 flex flex-col flex-no-wrap font-bold uppercase">
             <label for="title">Title</label>
             <input type="text" id="title" name="name" value=" <%= plan.name %> "  required>
+            <label for="type">Plan type</label>
+            <select name="type" id="type">
+              <option value="1">To-do</option>
+              <option value="2">Note</option>
+              <option value="3">Goal</option>
+              <option value="4">General</option>
+              <option value="5">Reminder</option>
+            </select>
             <label for="description">Description</label>
             <input type="text" id="description" name="desc" value=" <%= plan.description %> " required>
             <label for="content">pLan Content</label>
-            <input type="text" id="content" name="content" value=" <%= plan.content %> " required>
+            <textarea name="content" id="content" cols="30" rows="10" required><%= plan.content %></textarea>
             <input type="number" id="userId" name="userId" value="<%= user.id %>" required hidden>
            <button type="submit" class="btn-primary mt-10 w-1/2 mx-auto h-[45px]">Edit Plan</button>
          </form>

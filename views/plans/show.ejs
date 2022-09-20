@@ -2,16 +2,18 @@
  <div id="showPlan" class=" h-fit w-3/4 mx-auto mt-10 text-center">
     <div class="grid grid-col-3">
         <div id="banner" class="col-start-1 mx-auto">
-                <img src="<%= plan.banner_image %>" alt="banner" class="">
+                <img src="<%= plan.banner_image %>" alt="banner" class="rounded-2xl">
         </div>
-        <div class="col-start-2 col-end-3">
-            <div class=" h-1/4 w-full uppercase text-[32px]">title: <%= plan.name %> <%= plan.type.name %></div>
-            <div class=" h-1/2 w-full uppercase text-[22px]">description: <%= plan.description %></div>
+        <div class="col-start-2 col-end-3 font-bold text-white mt-auto">
+            <div class=" h-1/4 w-full uppercase text-[32px] mt-10  p-4 bg-sky-800 rounded-t-2xl"><%= plan.name %> <span class="ml-10 bg-gray-400 p-1 m-4 rounded-2xl"><%= plan.type.name %></span></div>
+            <div class=" h-fit w-full uppercase text-[32px] p-4 bg-sky-600 rounded-b-2xl"><%= plan.description %></div>
         </div>
-        <div class="mt-5 p-10 h-fit content-wrap uppercase text-[24px] col-start-1 col-end-3 "><%= plan.content %></div>
+        <div class="mt-5 p-10 h-fit content-wrap uppercase text-justify text-[24px] col-start-1 col-end-3 rounded-2xl bg-sky-100"><%= plan.content %></div>
     </div>
-    <a href="/plans/edit/<%= plan.id %>">Edit Plan</a>
-    <form action="/plans/<%= plan.id %>/?_method=DELETE" method="post">
-        <button type="submit">Delete pLan</button>
-    </form>
+    <div id="uD" class="my-4 text-white font-bold text-[32px] uppercase ">
+        <a href="/plans/edit/<%= plan.id %>" class="inline mr-4">Edit Plan</a>
+        <form action="/plans/<%= plan.id %>/?_method=DELETE" class="inline " method="post">
+            <button class="uppercase" type="submit">Delete p<span class="text-yellow-200">L</span>an</button>
+        </form>
+    </div>
 </div>

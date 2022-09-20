@@ -16,6 +16,9 @@ async function createTypes() {
         const general = await db.type.create({
             name: 'General'
         })
+        const reminder = await db.type.create({
+            name: 'Reminder'
+        })
     } catch(error) {
         console.warn(error)
     }

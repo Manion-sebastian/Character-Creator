@@ -10,12 +10,12 @@
               <option value="2">Note</option>
               <option value="3">Goal</option>
               <option value="4">General</option>
-              <option value="Reminder">Reminder</option>
+              <option value="5">Reminder</option>
             </select>
             <label for="description">Description</label>
             <input type="text" id="description" name="desc" required>
             <label for="content">pLan Content</label>
-            <input type="text" id="content" name="content" required>
+            <textarea name="content" id="content" cols="30" rows="10" required></textarea>
             <input type="number" id="userId" name="userId" value="<%= user.id %>" required hidden>
             <label for="banner">Banner File </label>
             <div class="mx-auto">

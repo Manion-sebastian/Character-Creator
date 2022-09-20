@@ -89,7 +89,8 @@ router.put('/edit/:id', async (req,res) => {
         await db.plan.update({
             name: req.body.name,
             description: req.body.desc,
-            content: req.body.content
+            content: req.body.content,
+            typeId: req.body.type
         },{
             where: {
                 id: req.params.id
