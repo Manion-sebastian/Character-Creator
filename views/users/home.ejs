@@ -1,43 +1,45 @@
 <% if(plans){ %>
-<% let latestPlan = plans.length - 1 %>
-<div id="pageStructure" class="px-[120px] py-[40px] w-screen h-fit grid grid-col-5 gap-16">
-    <div id="planSection" class=" col-start-1 col-end-1 uppercase text-[32px] bg-gray-800 opacity rounded-2xl text-white font-bold text-center ">
-        <div class=" my-[20px] px-8 max-w-[350px] mx-auto" >
-            <a  href="/plans">Create Plan</a>
-        </div>
-        <% let lastPlan = '' %>
-        <% if (plans.length > 10) { %>
-            <% lastPlan = latestPlan - 10 %>
-        <% } else { %>
-            <% lastPlan = 0 %>
-        <% } %>
-        <% for (let i = latestPlan - 1; i >= lastPlan; i--) { %>
-           <div class="max-w-[275px] mx-auto"> 
-            <a   href="/plans/show/<%=plans[i].id%>"><%= plans[i].name %> Plan</a>
-           </div> 
-        <% } %>
-    </div>
-    
-    <div id="showPlan" class=" h-fit w-full mx-auto mt-10 text-center col-start-2 col-end-5">
-        <% if(plans && latestPlan >= 0){ %>
-        <div class="grid grid-col-3">
-            <div id="banner" class="col-start-1 mx-auto">
-                <% if(plans && latestPlan >= 0){ %>
-                    <img src="<%= plans[latestPlan].banner_image %>" alt="banner" class="rounded-2xl">
-                <% } %>
+    <% let latestPlan = plans.length - 1 %>
+    <div id="pageStructure" class=" py-[40px] max-w-screen h-fit flex justify-around ">
+        <div id="planSection" class="uppercase text-[32px] bg-gray-800 opacity rounded-2xl text-white font-bold text-center h-fit mt-10 p-10">
+            <div class="bg-sky-400 rounded-2xl" >
+                <a  href="/plans">Create Plan</a>
             </div>
-            <div class="col-start-2 col-end-3 font-bold text-white mt-auto">
-                <div class=" h-1/4 w-full uppercase text-[32px] mt-10  p-4 bg-sky-800 rounded-t-2xl"><%= plans[latestPlan].name %> <span class="ml-10 bg-gray-400 p-1 m-4 rounded-2xl"><%= plans[latestPlan].type.name %></span></div>
-                <div class=" h-fit w-full uppercase text-[32px] p-4 bg-sky-600 rounded-b-2xl"><%= plans[latestPlan].description %></div>
+           
+            <% let lastPlan = '' %>
+            <% if (plans.length > 10) { %>
+                <% lastPlan = latestPlan - 10 %>
+            <% } else { %>
+                <% lastPlan = 0 %>
+            <% } %>
+            <% for (let i = latestPlan - 1; i >= lastPlan; i--) { %>
+            <div class="max-w-[275px] mx-auto"> 
+                <a   href="/plans/show/<%=plans[i].id%>"><%= plans[i].name %> Plan</a>
+            </div> 
+            <% } %>
+        </div>
+        
+        <div id="showPlan" class=" h-fit w-4/6 mt-10 text-center">
+            <% if(plans && latestPlan >= 0){ %>
+            <div class="grid grid-col-3">
+                <div id="banner" class="col-start-1 mx-auto">
+                    <% if(plans && latestPlan >= 0){ %>
+                        <img src="<%= plans[latestPlan].banner_image %>" alt="banner" class="rounded-2xl">
+                    <% } %>
+                </div>
+                <div class="col-start-2 col-end-3 font-bold text-white mt-auto">
+                    <div class=" h-1/4 w-full uppercase text-[32px] mt-10  p-4 bg-sky-800 rounded-t-2xl"><%= plans[latestPlan].name %> <span class="ml-10 bg-gray-400 p-1 m-4 rounded-2xl"><%= plans[latestPlan].type.name %></span></div>
+                    <div class=" h-fit w-full uppercase text-[32px] p-4 bg-sky-600 rounded-b-2xl"><%= plans[latestPlan].description %></div>
+                </div>
+                <div class="mt-5 p-10 h-fit content-wrap uppercase text-justify text-[24px] col-start-1 col-end-3 rounded-2xl bg-sky-100"><%= plans[latestPlan].content %></div>
             </div>
-            <div class="mt-5 p-10 h-fit content-wrap uppercase text-justify text-[24px] col-start-1 col-end-3 rounded-2xl bg-sky-100"><%= plans[latestPlan].content %></div>
+            <div id="uD" class="my-4 text-white font-bold text-[32px] uppercase ">
+                <a href="/plans/edit/<%= plans[latestPlan].id %>" class="inline mr-4">Edit Plan</a>
+                <form action="/plans/<%= plans[latestPlan].id %>/?_method=DELETE" class="inline " method="post">
+                    <button class="uppercase" type="submit">Delete p<span class="text-yellow-200">L</span>an</button>
+                </form>
+            </div>
         </div>
-        <div id="uD" class="my-4 text-white font-bold text-[32px] uppercase ">
-            <a href="/plans/edit/<%= plans[latestPlan].id %>" class="inline mr-4">Edit Plan</a>
-            <form action="/plans/<%= plans[latestPlan].id %>/?_method=DELETE" class="inline " method="post">
-                <button class="uppercase" type="submit">Delete p<span class="text-yellow-200">L</span>an</button>
-            </form>
-        </div>
-    </div>
-    <% } %>
-    <% } %>
+        
+        <% } %>
+<% } %>
