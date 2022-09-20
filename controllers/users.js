@@ -94,8 +94,6 @@ router.get('/profile', async (req,res) => {
                 where: {userId: res.locals.user.id},
                 include: [db.type]
             })
-            
-            console.log(plans)
             res.render('./users/home', {
                 user: res.locals.user, plans
             })

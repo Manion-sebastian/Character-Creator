@@ -4,8 +4,8 @@
           <form action="/plans/edit/<%= plan.id %>?_method=PUT" method="post" class="p-16 flex flex-col flex-no-wrap font-bold uppercase">
             <label for="title">Title</label>
             <input type="text" id="title" name="name" value=" <%= plan.name %> "  required>
-            <label for="type">Plan type</label>
-            <select name="type" id="type">
+            <label for="type">Plan type - Please reselect</label>
+            <select name="type" id="type" value="<%= plan.type %>">
               <option value="1">To-do</option>
               <option value="2">Note</option>
               <option value="3">Goal</option>
