@@ -135,7 +135,7 @@ router.get('/profile/photo', (req,res) => {
 router.put('/profile/photo', upload.single('profile_picture'), async (req,res) => {
     try {
        await cloudinary.uploader.upload(req.file.path, {transformation: [
-            {gravity: "face", height: 400, width: 400, crop: "limit"},
+            {gravity: "face", height: 400, width: 400, crop: "crop"},
             {radius: "max"},
             {width: 200, crop: "scale"}]},
             (error, result) => {
