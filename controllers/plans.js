@@ -19,7 +19,7 @@ router.post('/', upload.single('banner'), async (req,res) => {
     try {
         let bannerUrl = ''
         await cloudinary.uploader.upload(req.file.path, {transformation: [
-            {height: 300, width: 500, crop: "scale"}]},
+            {height: 300, width: 500, crop: "limit"}]},
             (error, result) => {
                 if (result) {
                     bannerUrl = result.secure_url
