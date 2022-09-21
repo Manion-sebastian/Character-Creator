@@ -27,7 +27,7 @@
                     <% } %>
                 </div>
                 <div class="col-start-2 col-end-3 font-bold text-white mt-auto">
-                    <div class=" h-1/4 w-full uppercase text-[32px] mt-10  p-4 bg-lime-800 rounded-t-2xl"><%= plans[latestPlan].name %> </div>
+                    <div class=" h-1/4 w-full uppercase text-[32px] mt-10  p-4 bg-lime-800 rounded-t-2xl"><%= plans[latestPlan].name %> <span class="ml-10 bg-white text-lime-800 p-1 rounded-2xl"><%= plans[latestPlan].type.name %></span> </div>
                     <div class=" h-fit w-full uppercase text-[32px] p-4 bg-lime-600 rounded-b-2xl"><%= plans[latestPlan].description %></div>
                 </div>
                 <div class="text-white font-bold mt-5 p-10 h-fit content-wrap uppercase text-justify text-[24px] col-start-1 col-end-3 rounded-2xl bg-lime-600 break-all"><%= plans[latestPlan].content%></div>
