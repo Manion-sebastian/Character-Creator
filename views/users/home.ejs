@@ -1,4 +1,4 @@
-<% if(plans){ %>
+<% if(plans.length >= 1){ %>
     <% let latestPlan = plans.length - 1 %>
     <div id="pageStructure" class=" py-[40px] max-w-screen h-fit flex justify-around ">
         <div id="planSection" class="uppercase text-[20px] bg-lime-800 rounded-2xl text-white font-bold text-center h-fit mt-10 p-10">
@@ -41,4 +41,13 @@
         </div>
         
         <% } %>
+<% } else { %>
+    <div class="flex justify-center w-full uppercase text-[20px] text-white font-bold text-center">
+        <div id="planSection" class="w-fit  bg-lime-800 rounded-2xl  h-fit mt-10 p-10">
+            <div class="bg-lime-600 rounded-2xl p-3" >
+                <a  href="/plans">get started!</a>
+            </div>
+        </div>
+    </div>
+
 <% } %>
