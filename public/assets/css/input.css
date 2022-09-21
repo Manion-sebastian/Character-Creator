@@ -5,6 +5,19 @@
 /* to run tailwind */
 /* npx tailwindcss -i public/assets/css/input.css -o public/assets/css/output.css --watch */
 
+body::-webkit-scrollbar {
+    width: .25rem;
+  }
+   
+  body::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  }
+   
+  body::-webkit-scrollbar-thumb {
+    background-color: #84cc16;
+    /* outline: 1px solid slategrey; */
+  }
+
 @layer components {
     .btn-primary {
         @apply py-2 px-4 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75

@@ -648,19 +648,14 @@ video {
   margin-bottom: 1.25rem;
 }
 
-.my-2 {
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
+.my-4 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
 .mx-5 {
   margin-left: 1.25rem;
   margin-right: 1.25rem;
-}
-
-.my-4 {
-  margin-top: 1rem;
-  margin-bottom: 1rem;
 }
 
 .my-3 {
@@ -866,19 +861,14 @@ video {
   border-radius: 1rem;
 }
 
-.rounded-b-3xl {
-  border-bottom-right-radius: 1.5rem;
-  border-bottom-left-radius: 1.5rem;
+.rounded-b-2xl {
+  border-bottom-right-radius: 1rem;
+  border-bottom-left-radius: 1rem;
 }
 
 .rounded-t-2xl {
   border-top-left-radius: 1rem;
   border-top-right-radius: 1rem;
-}
-
-.rounded-b-2xl {
-  border-bottom-right-radius: 1rem;
-  border-bottom-left-radius: 1rem;
 }
 
 .rounded-b-full {
@@ -900,19 +890,6 @@ video {
 
 .rounded-bl-2xl {
   border-bottom-left-radius: 1rem;
-}
-
-.border {
-  border-width: 1px;
-}
-
-.border-\[3px\] {
-  border-width: 3px;
-}
-
-.border-white {
-  --tw-border-opacity: 1;
-  border-color: rgb(255 255 255 / var(--tw-border-opacity));
 }
 
 .bg-gray-300 {
@@ -977,6 +954,11 @@ video {
 
 .p-\[40px\] {
   padding: 40px;
+}
+
+.py-\[70px\] {
+  padding-top: 70px;
+  padding-bottom: 70px;
 }
 
 .py-\[60px\] {
@@ -1078,6 +1060,19 @@ video {
 /* to run tailwind */
 
 /* npx tailwindcss -i public/assets/css/input.css -o public/assets/css/output.css --watch */
+
+body::-webkit-scrollbar {
+  width: .25rem;
+}
+
+body::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #84cc16;
+  /* outline: 1px solid slategrey; */
+}
 
 .hover\:ring:hover {
   --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
