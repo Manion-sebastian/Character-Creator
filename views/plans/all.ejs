@@ -1,7 +1,10 @@
 
-<% plans.forEach(plan => { %>
-    <div class="">
-    <a  href="/plans/show/<%=plan.id%>"><%= plan.name %></a>
-    </div> 
+<div id="allContaienr" class="m-[80px] flex flex-wrap ">
+    <% plans.forEach(plan => { %>
+        <div class="text-white font-bold text-[30px] uppercase bg-lime-800 m-4 w-fit text-center rounded-xl p-4">
+        <a  href="/plans/show/<%=plan.id%>"><%= plan.name %></a>
+        </div> 
+    
+    <%})%>
 
-<%})%>
+</div>
