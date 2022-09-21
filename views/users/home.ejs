@@ -30,9 +30,9 @@
                     <div class=" h-1/4 w-full uppercase text-[32px] mt-10  p-4 bg-lime-800 rounded-t-2xl"><%= plans[latestPlan].name %> <span class="ml-10 bg-white text-lime-800 p-1 rounded-2xl"><%= plans[latestPlan].type.name %></span></div>
                     <div class=" h-fit w-full uppercase text-[32px] p-4 bg-lime-600 rounded-b-2xl"><%= plans[latestPlan].description %></div>
                 </div>
-                <div class="text-white font-bold mt-5 p-10 h-fit content-wrap uppercase text-justify text-[24px] col-start-1 col-end-3 rounded-2xl bg-gray-500 break-all"><%= plans[latestPlan].content%></div>
+                <div class="text-white font-bold mt-5 p-10 h-fit content-wrap uppercase text-justify text-[24px] col-start-1 col-end-3 rounded-2xl bg-lime-600 break-all"><%= plans[latestPlan].content%></div>
             </div>
-            <div id="uD" class="my-4 text-white font-bold text-[32px] uppercase ">
+            <div id="uD" class=" text-white font-bold text-[32px] uppercase bg-lime-800 w-2/5 rounded-b-full mx-auto">
                 <a href="/plans/edit/<%= plans[latestPlan].id %>" class="inline mr-4 ">Edit P<span class="text-lime-500">L</span>an</a>
                 <form action="/plans/<%= plans[latestPlan].id %>/?_method=DELETE" class="inline " method="post">
                     <button class="uppercase " type="submit">Delete p<span class="text-lime-500">L</span>an</button>
