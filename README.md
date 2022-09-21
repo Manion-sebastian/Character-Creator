@@ -1,6 +1,20 @@
 # pLans
 ### Project 2 GA-SEI Full Stack Application
 
+### Live Site
+
+https://p2-debloyment-manion-sebastian.koyeb.app/
+
+### Installation
+* Git clone this repo
+* Make a cloudinary account. get the required info
+* * create an upload profile
+* * upload your keys to the .env
+* Npm init and install
+* Uncomment the function in createTypes.js and run the file
+* You should be good to go. 
+
+---
 
 ### The Daily User
 Say you want to be able to make a plan for the day, either what you'll be doing, or what you need to be doing. pLan is the app for you! Create a pLan to keep track of what needs doing.
@@ -64,17 +78,18 @@ As mentioned above I will be using Cloudinary, and Bootstrap. I will also be usi
 |:------:|:------:|:-----------:|
 | POST   | /users | Create new user |
 | GET    | /users/new | Render form for creating new User |
-| PUT    | /users/:id | Edit User |
-| DELETE | /users/:id | Delete User |
+| PUT    | /users/profile/edit | Edit User |
+| GET    | /users/profile  | show user main page |
+
 
 #### pLans
 | Method | Action | Description |
 |:------:|:------:|:-----------:|
-| GET    | /users/:id/plans | Show all pLans |
-| POST   | /users/:id/plans | Create new user |
+| GET    | /plans/all | Show all pLans |
+| POST   | /users/plans | Create new pLan |
 | GET    | /users/:id/plans/new | Render form for creating new pLan |
 | PUT    | /users/:id/plans | Edit pLan |
-| DELETE | /users/:id/plans/:id | Delete pLan |
+| DELETE | /users/plans/:id | Delete pLan |
 
 ---
 
@@ -104,6 +119,10 @@ Potential issues I could have
 * Route issues
 
 ---
+
+## Post Project Reflection
+This was a difficult project, I wasn't able to use cloudinary to the best of its abilities and I want to go back and do that. I also had some issues with routes.
+I did however get closer to understanding how I should break these projects down, and how to make an application that fits all my neeeds. 
 
 ## Proof of API usage
 
